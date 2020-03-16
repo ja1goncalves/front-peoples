@@ -1,0 +1,142 @@
+.form-validator-error {
+  color: #ff0000;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.input-invalid {
+  border-color: #ff0000;
+}
+
+.footer {
+  margin-top: 20px;
+  border-top: 3px solid #ffd511;
+  padding-top: 1rem;
+  background-color: #333333;
+  color: #fff;;
+}
+
+.block-address-contacts{
+  border-bottom: 1px solid #333333;
+  margin-bottom: 3rem;
+}
+
+.menu-extorno-footer .nav {
+  float: left;
+  padding-right: 1.2em;
+}
+
+.parag{
+  font-size: 14px;
+}
+.aba{
+  margin: 9%;
+}
+
+.rodape{
+  font-style: italic;
+  font-size: 12px;
+}
+
+
+.vivo{
+  margin: .5em 0;
+}
+
+.title-footer{
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.menu-extorno-footer li {
+  display: block;
+  margin: .5em 0;
+}
+
+.menu-extorno-footer a{
+  color:#fff;
+}
+
+.menu-footer li {
+  display: block;
+  margin: .5em 0;
+}
+
+.menu-footer a{
+  color:#fff;
+}
+
+.icon-social-footer{
+  color:#fff;
+  font-size: 2.0rem;
+  margin-bottom: .5em;
+  display: block;
+}
+
+.icon-social-footer i:nth-child(0){
+  color:red;
+}
+
+.copyright{
+  background-color: #444;
+  color:#fff;
+  padding: .55em .2em;
+  margin-top: .8em;
+  text-align: center;
+  font-size: .9em;
+}
+
+
+@media screen and (min-width: 88px) and (max-width:760px){
+  .col-xs-12.col-sm-4.col-md-4.col-lg-4{
+    display: none !important;
+  }
+  .col-xs-12.col-sm-2.col-md-4.col-lg-2.hidden-md-down{
+    display: none !important;
+  }
+  .col-xs-12.col-md-6.col-lg-5{
+    text-align: center !important;
+    display: none !important;
+    font-style: italic;
+  }
+  .parag{
+    text-align: center !important;
+    font-style: italic;
+  }
+  .title-footer{
+    text-align: center;
+    font-style: italic;
+  }
+  .parag{
+    text-align: center;
+    font-style: italic;
+  }
+  .nav{
+    text-align: center;
+    font-style: italic;
+  }
+  .nav.nav-inline{
+    text-align: center;
+    font-style: italic;
+  }
+  .nav-item{
+    margin: 0 14px!important;
+    font-style: italic;
+  }
+  .vivo{
+    margin: 0 14px!important;
+    font-style: italic;
+  }
+  li a{
+    text-align: center;
+    font-style: italic;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width:1080px){
+
+  .col-xs-12.col-sm-4.col-md-4.col-lg-4{
+    display: none !important;
+  }
+}
