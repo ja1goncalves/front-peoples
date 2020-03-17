@@ -1,7 +1,10 @@
 # FrontPeoples
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6. Please, before run the application check every dependencies.
+For help, install [npm and node.js](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04-pt). After all installation, execute ``npm install`` for create node_modules.
+Then, your application are complete for use.
 
+This application are pre-configured in environment with API URL of Back-End.
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
