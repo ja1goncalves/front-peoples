@@ -40,7 +40,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-6">
           <label style="color: darkblue;">Data de nascimento</label>
           <input type="text" [min]="minDate" [max]="maxDate"
-                 class="form-control col-12 col-sm-12 col-md-12 col-lg-12 mb-3" mask="00/00/0000"
+                 class="form-control col-12 col-sm-12 col-md-12 col-lg-12 mb-3" mask="00/00/0000" [dropSpecialCharacters]="false"
                  formControlName="birthday" [ngClass]="{'input-invalid': f.birthday.touched && f.birthday.invalid}">
           <div *ngIf="f.birthday.invalid" class="form-validator-error">
             <div *ngIf="f.birthday.errors.required">Data de nascimento é obrigatório</div>

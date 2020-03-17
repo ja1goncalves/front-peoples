@@ -5,6 +5,7 @@ import { GENDERS } from '../../config/consts';
 import { People, RegisterPeople } from '../../models/people';
 import {PeoplesService} from '../../services/peoples/peoples.service';
 import {NotifierService} from 'angular-notifier';
+import {DateHelper} from '../../helpers/dates';
 
 @Component({
   selector: 'app-peoples',
@@ -63,20 +64,19 @@ export class PeoplesComponent implements OnInit {
         name: this.accessDataForm.controls.name.value,
         gender: this.accessDataForm.controls.gender.value,
         email: this.accessDataForm.controls.email.value,
-        birthday: this.accessDataForm.controls.birthday.value,
+        birthday: DateHelper.convertFormatBrazilianDate(this.accessDataForm.controls.birthday.value),
         cpf: this.accessDataForm.controls.cpf.value,
         naturality: this.accessDataForm.controls.naturality.value,
         nationality: this.accessDataForm.controls.nationality.value,
       };
 
-      console.log(this.registerData);
-      // this.register.create(this.registerData).subscribe(
-      //   (response: any) => {
-      //     this.notifier.notify('success', `${response.name} foi adicionado!`);
-      //   }, (error) => {
-      //     this.notifier.notify('error', `A pessoa não pode ser adicionada!`);
-      //   }
-      // );
+      this.register.create(this.registerData).subscribe(
+        (response: any) => {
+          this.notifier.notify('success', `${response.name} foi adicionado!`);
+        }, (error) => {
+          this.notifier.notify('error', `A pessoa não pode ser adicionada!`);
+        }
+      );
     }
 
   }

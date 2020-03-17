@@ -4,7 +4,7 @@ export interface People {
   name: string;
   gender: string;
   email: string;
-  birthday: Date;
+  birthday: string;
   cpf: string;
   naturality: string;
   nationality: string;
@@ -14,7 +14,7 @@ export interface RegisterPeople {
   name: string;
   gender: string;
   email: string;
-  birthday: Date;
+  birthday: string;
   cpf: string;
   naturality: string;
   nationality: string;
