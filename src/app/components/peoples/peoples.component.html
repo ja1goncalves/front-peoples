@@ -66,7 +66,7 @@
   <div class="col-6 col-sm-6 col-md-6 col-lg-6 mb-3 card high-dark-card">
     <h4 class="fieldset-title card high-dark-card text-center" style="color: lightgreen;">Participantes do sorteio</h4>
     <div class="row" style="margin-bottom: 20px">
-      <div *ngFor="let item of peoples.splice(0, 15)" class="card-body">
+      <div *ngFor="let item of peoples.slice(0, 12)" class="card-body">
         <span class="card highlight-card text-center" style="">{{item.name ? item.name : 'Sem nome' | slice: 0:20}}</span>
         <span class="card highlight-card text-center" style="margin-top: 5px">{{item.cpf | mask: "000.000.000-00"}}</span>
       </div>

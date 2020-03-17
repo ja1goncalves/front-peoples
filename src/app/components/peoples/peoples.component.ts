@@ -73,6 +73,7 @@ export class PeoplesComponent implements OnInit {
       this.register.create(this.registerData).subscribe(
         (response: any) => {
           this.notifier.notify('success', `${response.name} foi adicionado!`);
+          this.getAllPeoples();
         }, (error) => {
           this.notifier.notify('error', `A pessoa não pode ser adicionada!`);
         }
