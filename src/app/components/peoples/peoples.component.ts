@@ -63,19 +63,20 @@ export class PeoplesComponent implements OnInit {
         name: this.accessDataForm.controls.name.value,
         gender: this.accessDataForm.controls.gender.value,
         email: this.accessDataForm.controls.email.value,
-        birthday: this.accessDataForm.controls.email.value,
+        birthday: this.accessDataForm.controls.birthday.value,
         cpf: this.accessDataForm.controls.cpf.value,
-        naturality: this.accessDataForm.controls.naturalness.value,
+        naturality: this.accessDataForm.controls.naturality.value,
         nationality: this.accessDataForm.controls.nationality.value,
       };
 
-      this.register.create(this.registerData).subscribe(
-        (response: any) => {
-          this.notifier.notify('success', `${response.name} foi adicionado!`);
-        }, (error) => {
-          this.notifier.notify('error', `A pessoa não pode ser adicionada!`);
-        }
-      );
+      console.log(this.registerData);
+      // this.register.create(this.registerData).subscribe(
+      //   (response: any) => {
+      //     this.notifier.notify('success', `${response.name} foi adicionado!`);
+      //   }, (error) => {
+      //     this.notifier.notify('error', `A pessoa não pode ser adicionada!`);
+      //   }
+      // );
     }
 
   }
