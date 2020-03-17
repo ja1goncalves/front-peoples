@@ -42,7 +42,10 @@ export class PeoplesService {
   public find(id: string): Observable<any> {
     return new Observable((observer) => {
       this.http.get(`${environment.API_URL}/api/peoples/${id}`, {headers: this.headers}).subscribe(
-        (response: any) => {  observer.next(response); },
+        (response: any) => {
+          console.log(response);
+          observer.next(response);
+        },
         (error) => { observer.error(error.error); }
       );
     });
