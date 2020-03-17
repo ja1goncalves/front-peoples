@@ -67,62 +67,11 @@
     <form [formGroup]="accessDataForm" (submit)="accessDataSubmit()">
       <h4 class="fieldset-title card high-dark-card text-center" style="color: lightgreen;">Participantes do sorteio</h4>
       <div class="row" style="margin-bottom: 20px">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-3">
-          <label style="color: lightgreen;">E-mail:</label><br>
-          <input type="email" class="form-control" [ngClass]="{'input-invalid': submitted && f.email.errors}" name="email" placeholder="E-mail" formControlName="email">
-          <div *ngIf="submitted && f.email.errors" class="form-validator-error">
-            <div *ngIf="f.email.errors.email">Informe um email válido</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
-          <label style="color: lightgreen;">Nome</label><br>
-          <input type="text" class="form-control" [ngClass]="{'input-invalid': submitted && f.name.errors}" name="name" placeholder="Nome Completo" formControlName="name" maxlength="50">
-          <div *ngIf="submitted && f.name.errors" class="form-validator-error">
-            <div *ngIf="f.name.errors.required">O nome é obrigatório</div>
-            <div *ngIf="f.name.errors.minlength">O nome é pequeno demais</div>
-            <div *ngIf="f.name.errors.pattern">O nome não deve possuir caracteres especiais</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
-          <label style="color: lightgreen;">CPF</label><br>
-          <input type="text" class="form-control" [ngClass]="{'input-invalid': submitted && f.cpf.errors}" name="cpf" placeholder="CPF" formControlName="cpf" [dropSpecialCharacters]="false" mask="000.000.000-00">
-          <div *ngIf="submitted && f.cpf.errors" class="form-validator-error">
-            <div *ngIf="f.cpf.errors.required">O CPF é obrigatório</div>
-            <div *ngIf="f.cpf.errors.minlength">Informe um cpf válido</div>
-            <div *ngIf="accessDataForm.get('cpf').getError('cpfNotValid')">O CPF é inválido!</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-4 col-md-6 col-lg-6 mb-3">
-          <label style="color: lightgreen;">Sexo</label>
-          <select formControlName="gender" class="form-control" [ngClass]="{'input-invalid': f.gender.touched && f.gender.invalid}">
-            <option *ngFor="let gender of genders" [value]="gender.value">{{gender.label}}</option>
-          </select>
-          <div *ngIf="submitted && f.gender.errors" class="form-validator-error">
-            <div *ngIf="f.personal_gender.errors.minlength">O sexo é de tamanho inválido</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-6">
-          <label style="color: lightgreen;">Data de nascimento</label>
-          <input type="text" [min]="minDate" [max]="maxDate"
-                 class="birthday-input form-control col-12 col-sm-12 col-md-12 col-lg-12 mb-3" matInput mask="00/00/0000"
-                 formControlName="birthday" [ngClass]="{'input-invalid': f.birthday.touched && f.birthday.invalid}">
-          <div *ngIf="submitted && f.cellphone.errors" class="form-validator-error">
-            <div *ngIf="f.birthday.errors.required">Data de nascimento é obrigatório</div>
-            <div *ngIf="f.birthday.errors.minlength">Informe uma data válida</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
-          <label style="color: lightgreen;">Naturalidade</label>
-          <input type="text" formControlName="naturalness" class="form-control"
-                 placeholder="Naturalidade" maxlength="50" />
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
-          <label style="color: lightgreen;">Nacionalidadde</label>
-          <input type="text" formControlName="nationality" class="form-control"
-                 placeholder="Nacionalidade" maxlength="50" />
-        </div>
-        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
-          <button class="btn btn-primary btn-block" type="submit">Salvar</button>
+        <span class="card highlight-card text-center" style="margin-left: 13%">Nome</span>
+        <span class="card highlight-card text-center" style="margin-left: 15%">Cidade</span>
+        <div *ngFor="let item of peoples">
+          <span class="card highlight-card text-center" style="min-width: 47%; margin-left: 2%;">{{item.name | slice: 0:20}}</span>
+          <span class="card highlight-card text-center" style="min-width: 47%; margin-left: 2%;">{{item.naturalness | slice: 0:20}}</span>
         </div>
       </div>
     </form>

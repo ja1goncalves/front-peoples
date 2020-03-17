@@ -19,6 +19,7 @@ export class PeoplesComponent implements OnInit {
   public submitted: boolean;
   public registerData: RegisterPeople;
   public people: People;
+  public peoples: Array<People>;
   public maxDate = new Date();
   public minDate = new Date(this.maxDate.getFullYear() - 150, this.maxDate.getMonth());
   public genders: any[] = GENDERS;
@@ -42,9 +43,19 @@ export class PeoplesComponent implements OnInit {
       naturalness: ['', [Validators.maxLength(50)]],
       nationality: ['', [Validators.maxLength(50)]],
     });
+
+    this.getAllPeoples();
   }
 
   get f(): any { return this.accessDataForm.controls; }
+
+  public getAllPeoples(): void {
+    this.register.all().subscribe(
+      (response: any) => {
+        this.peoples = response;
+      }, (error) => { }
+    );
+  }
 
   public accessDataSubmit(): void {
     if (this.accessDataForm.valid) {
