@@ -40,7 +40,7 @@ export class PeoplesComponent implements OnInit {
       cpf: ['', [Validators.required, Validators.minLength(11), GenericValidator.isValidCpf()]],
       gender: ['', [Validators.maxLength(1)]],
       birthday: ['', [Validators.required, Validators.minLength(8)]],
-      naturalness: ['', [Validators.maxLength(50)]],
+      naturality: ['', [Validators.maxLength(50)]],
       nationality: ['', [Validators.maxLength(50)]],
     });
 
@@ -65,7 +65,7 @@ export class PeoplesComponent implements OnInit {
         email: this.accessDataForm.controls.email.value,
         birthday: this.accessDataForm.controls.email.value,
         cpf: this.accessDataForm.controls.cpf.value,
-        naturalness: this.accessDataForm.controls.naturalness.value,
+        naturality: this.accessDataForm.controls.naturalness.value,
         nationality: this.accessDataForm.controls.nationality.value,
       };
 

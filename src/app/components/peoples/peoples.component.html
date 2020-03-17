@@ -49,7 +49,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
           <label style="color: darkblue;">Naturalidade</label>
-          <input type="text" formControlName="naturalness" class="form-control"
+          <input type="text" formControlName="naturality" class="form-control"
                  placeholder="Naturalidade" maxlength="50" />
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
@@ -67,11 +67,9 @@
     <form [formGroup]="accessDataForm" (submit)="accessDataSubmit()">
       <h4 class="fieldset-title card high-dark-card text-center" style="color: lightgreen;">Participantes do sorteio</h4>
       <div class="row" style="margin-bottom: 20px">
-        <span class="card highlight-card text-center" style="margin-left: 13%">Nome</span>
-        <span class="card highlight-card text-center" style="margin-left: 15%">Cidade</span>
-        <div *ngFor="let item of peoples">
-          <span class="card highlight-card text-center" style="min-width: 47%; margin-left: 2%;">{{item.name | slice: 0:20}}</span>
-          <span class="card highlight-card text-center" style="min-width: 47%; margin-left: 2%;">{{item.naturalness | slice: 0:20}}</span>
+        <div *ngFor="let item of peoples" class="card-body">
+          <span class="card highlight-card text-center" style="">{{item.name ? item.name : 'Sem nome' | slice: 0:20}}</span>
+          <span class="card highlight-card text-center" style="margin-top: 5px">{{item.cpf | mask: "000.000.000-00"}}</span>
         </div>
       </div>
     </form>

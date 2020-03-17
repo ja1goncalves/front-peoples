@@ -6,7 +6,7 @@ export interface People {
   email: string;
   birthday: Date;
   cpf: string;
-  naturalness: string;
+  naturality: string;
   nationality: string;
 }
 
@@ -16,6 +16,6 @@ export interface RegisterPeople {
   email: string;
   birthday: Date;
   cpf: string;
-  naturalness: string;
+  naturality: string;
   nationality: string;
 }
