@@ -11,20 +11,12 @@ import {toBase64String} from '@angular/compiler/src/output/source_map';
 })
 export class PeoplesService {
 
-  public headers: HttpHeaders;
-  constructor(private http: HttpClient, private route: Router) {
-    this.headers = new HttpHeaders();
-    this.headers
-      .set('Accept', ['application/json'])
-      .set('Content-Type', ['application/json'])
-      .set('Access-Control-Allow-Origin', ['*'])
-      .set('Authorization', 'Basic ' + btoa(environment.USERNAME + ':' + environment.PASSWORD));
-  }
+  constructor(private http: HttpClient, private route: Router) {}
 
   public create(requestData: RegisterPeople): Observable<any> {
     return new Observable((observer) => {
-      this.http.post(`${environment.API_URL}/api/peoples/`, requestData, {headers: this.headers}).subscribe(
-        (response: any) => {  observer.next(response); },
+      this.http.post(`${environment.API_URL}/api/peoples/`, requestData).subscribe(
+        (response: any) => { observer.next(response); },
         (error) => { observer.error(error.error); }
       );
     });
@@ -32,8 +24,8 @@ export class PeoplesService {
 
   public all(): Observable<any> {
     return new Observable((observer) => {
-      this.http.get(`${environment.API_URL}/api/peoples/`, {headers: this.headers}).subscribe(
-        (response: any) => {  observer.next(response); },
+      this.http.get(`${environment.API_URL}/api/peoples/`).subscribe(
+        (response: any) => { observer.next(response); },
         (error) => { observer.error(error.error); }
       );
     });
@@ -41,11 +33,8 @@ export class PeoplesService {
 
   public find(id: string): Observable<any> {
     return new Observable((observer) => {
-      this.http.get(`${environment.API_URL}/api/peoples/${id}`, {headers: this.headers}).subscribe(
-        (response: any) => {
-          console.log(response);
-          observer.next(response);
-        },
+      this.http.get(`${environment.API_URL}/api/peoples/${id}`).subscribe(
+        (response: any) => { observer.next(response); },
         (error) => { observer.error(error.error); }
       );
     });
@@ -53,8 +42,8 @@ export class PeoplesService {
 
   public update(requestData: People): Observable<any> {
     return new Observable((observer) => {
-      this.http.put(`${environment.API_URL}/api/peoples/`, requestData, {headers: this.headers}).subscribe(
-        (response: any) => {  observer.next(response); },
+      this.http.put(`${environment.API_URL}/api/peoples/`, requestData).subscribe(
+        (response: any) => { observer.next(response); },
         (error) => { observer.error(error.error); }
       );
     });

@@ -8,6 +8,7 @@ import { PeoplesComponent } from './components/peoples/peoples.component';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {TokenInterceptor} from './services/token/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
     FormsModule,
     NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
