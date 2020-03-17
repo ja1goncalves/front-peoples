@@ -13,11 +13,12 @@ export class PeoplesService {
 
   public headers: HttpHeaders;
   constructor(private http: HttpClient, private route: Router) {
-    this.headers = new HttpHeaders({
-      Authorization: 'Basic ' + btoa(environment.USERNAME + ':' + environment.PASSWORD),
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
-    });
+    this.headers = new HttpHeaders();
+    this.headers
+      .set('Accept', ['application/json'])
+      .set('Content-Type', ['application/json'])
+      .set('Access-Control-Allow-Origin', ['*'])
+      .set('Authorization', 'Basic ' + btoa(environment.USERNAME + ':' + environment.PASSWORD));
   }
 
   public create(requestData: RegisterPeople): Observable<any> {
